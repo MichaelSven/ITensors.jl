@@ -100,6 +100,9 @@ function op(::ElectronSite,
     pUD = ITensor(s)
     pUD[UpDn] = 1.0
     return pUD
+  elseif opname == "F" 
+    Op[Up, UpP] = -1.
+    Op[Dn, DnP] = 1.
   else
     throw(ArgumentError("Operator name $opname not recognized for ElectronSite"))
   end
