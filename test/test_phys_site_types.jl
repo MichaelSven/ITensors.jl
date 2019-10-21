@@ -26,6 +26,7 @@ using ITensors,
     @test array(op(s,"projDn",2),s[2]',s[2])  ≈ [ 0.0  0.0; 0.0 1.0]
     @test array(op(s,"Up",2),s[2])  ≈ [1.0,0.0]
     @test array(op(s,"Dn",2),s[2])  ≈ [0.0,1.0]
+    @test array(op(s,"F",2),s[2]',s[2])  ≈ [ -1.0  0.0; 0.0 1.0]
   end
 
   @testset "Spin One sites" begin

@@ -58,6 +58,9 @@ function op(::SpinHalfSite,
     pD = ITensor(s)
     pD[Dn] = 1.
     return pD
+  elseif opname == "F"
+    Op[Up, UpP] = -1.
+    Op[Dn, DnP] = 1.
   else
     throw(ArgumentError("Operator name '$opname' not recognized for SpinHalfSite"))
   end
